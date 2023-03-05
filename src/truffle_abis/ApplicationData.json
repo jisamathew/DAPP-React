@@ -1,0 +1,122 @@
+{
+  "contractName": "ApplicationData",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/ApplicationData.sol\":\"ApplicationData\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/ApplicationData.sol\":{\"keccak256\":\"0x7d4965de02dc6d9cd2d3f82ef78c3617a14f7a1b0ce467a84073b00241d5de8a\",\"urls\":[\"bzz-raw://816c9a8a32d4f0392c717138685f2cc64ed6c0d165b854092f46c92aaa6941ac\",\"dweb:/ipfs/QmNTazax2kFrUWSJQXkqrtfNeAMcfpLxwMxxY4v8dncNhu\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820d2455c4e0e24f6bf1c16a850dcc85b829212d1e2659acc06334c9084a357c24364736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820d2455c4e0e24f6bf1c16a850dcc85b829212d1e2659acc06334c9084a357c24364736f6c63430005100032",
+  "sourceMap": "70:33:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;70:33:0;;;;;;;",
+  "deployedSourceMap": "70:33:0:-;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity >=0.4.16 <0.9.0;\n\ncontract ApplicationData {\n\n  \n\n}",
+  "sourcePath": "/home/kottackal/Desktop/DAPP_react_Registration_GITHUB/src/contracts/ApplicationData.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/ApplicationData.sol",
+    "exportedSymbols": {
+      "ApplicationData": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".16",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:32:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "ApplicationData",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "70:33:0"
+      }
+    ],
+    "src": "36:67:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/src/contracts/ApplicationData.sol",
+      "exportedSymbols": {
+        "ApplicationData": [
+          2
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".16",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "36:32:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            2
+          ],
+          "name": "ApplicationData",
+          "nodes": [
+            null
+          ],
+          "scope": 3
+        },
+        "id": 2,
+        "name": "ContractDefinition",
+        "src": "70:33:0"
+      }
+    ],
+    "id": 3,
+    "name": "SourceUnit",
+    "src": "36:67:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2023-03-05T02:14:38.057Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

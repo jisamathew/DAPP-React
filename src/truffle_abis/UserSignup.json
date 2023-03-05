@@ -1,0 +1,1903 @@
+{
+  "contractName": "UserSignup",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "register",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "role",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "userHash",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "hash",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "urole",
+          "type": "string"
+        }
+      ],
+      "name": "savesignup",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "userRole",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "logindata",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"logindata\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"register\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"role\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"userHash\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"hash\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"urole\",\"type\":\"string\"}],\"name\":\"savesignup\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"userRole\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Jisa\",\"methods\":{},\"title\":\"User Registration\"},\"userdoc\":{\"methods\":{},\"notice\":\"Use this contract for saving and retreiving registered users\"}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/UserSignup.sol\":\"UserSignup\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/UserSignup.sol\":{\"keccak256\":\"0xb99863a4151dcc393b40a8ea637b26c716fc9608fe099c692833e77eb2462927\",\"urls\":[\"bzz-raw://8195f77e7ad2c50f2b3f4369dbdf5c4a524334547cdbf4642f0371ab434dce08\",\"dweb:/ipfs/QmTLMYryJxRQah4fNZ8YAYSuqKT1pwD2vGjDjv7GJWTEav\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610727806100206000396000f3fe60806040526004361061003f5760003560e01c80632b64ddee146100445780634420e486146100ec578063534f5680146101fd57806362454f9314610230575b600080fd5b34801561005057600080fd5b506100776004803603602081101561006757600080fd5b50356001600160a01b0316610381565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100b1578181015183820152602001610099565b50505050905090810190601f1680156100de5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156100f857600080fd5b5061011f6004803603602081101561010f57600080fd5b50356001600160a01b031661044a565b604051808060200180602001838103835285818151815260200191508051906020019080838360005b83811015610160578181015183820152602001610148565b50505050905090810190601f16801561018d5780820380516001836020036101000a031916815260200191505b50838103825284518152845160209182019186019080838360005b838110156101c05781810151838201526020016101a8565b50505050905090810190601f1680156101ed5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561020957600080fd5b506100776004803603602081101561022057600080fd5b50356001600160a01b0316610586565b61036d6004803603606081101561024657600080fd5b6001600160a01b03823516919081019060408101602082013564010000000081111561027157600080fd5b82018360208201111561028357600080fd5b803590602001918460018302840111640100000000831117156102a557600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092959493602081019350359150506401000000008111156102f857600080fd5b82018360208201111561030a57600080fd5b8035906020019184600183028401116401000000008311171561032c57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506105f8945050505050565b604080519115158252519081900360200190f35b6060600080836001600160a01b03166001600160a01b031681526020019081526020016000206001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561043e5780601f106104135761010080835404028352916020019161043e565b820191906000526020600020905b81548152906001019060200180831161042157829003601f168201915b50505050509050919050565b6000602081815291815260409081902080548251601f6002600019610100600186161502019093169290920491820185900485028101850190935280835290928391908301828280156104de5780601f106104b3576101008083540402835291602001916104de565b820191906000526020600020905b8154815290600101906020018083116104c157829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561057c5780601f106105515761010080835404028352916020019161057c565b820191906000526020600020905b81548152906001019060200180831161055f57829003601f168201915b5050505050905082565b6001600160a01b0381166000908152602081815260409182902080548351601f600260001961010060018616150201909316929092049182018490048402810184019094528084526060939283018282801561043e5780601f106104135761010080835404028352916020019161043e565b6001600160a01b0383166000908152602081815260408220845161062492600190920191860190610657565b506001600160a01b038416600090815260208181526040909120835161064c92850190610657565b506001949350505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061069857805160ff19168380011785556106c5565b828001600101855582156106c5579182015b828111156106c55782518255916020019190600101906106aa565b506106d19291506106d5565b5090565b6106ef91905b808211156106d157600081556001016106db565b9056fea265627a7a72315820b8b37c0bcd87fb39439d8b611f3150782bcef99b908fe0cf7232f9888c3a774864736f6c63430005100032",
+  "deployedBytecode": "0x60806040526004361061003f5760003560e01c80632b64ddee146100445780634420e486146100ec578063534f5680146101fd57806362454f9314610230575b600080fd5b34801561005057600080fd5b506100776004803603602081101561006757600080fd5b50356001600160a01b0316610381565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100b1578181015183820152602001610099565b50505050905090810190601f1680156100de5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156100f857600080fd5b5061011f6004803603602081101561010f57600080fd5b50356001600160a01b031661044a565b604051808060200180602001838103835285818151815260200191508051906020019080838360005b83811015610160578181015183820152602001610148565b50505050905090810190601f16801561018d5780820380516001836020036101000a031916815260200191505b50838103825284518152845160209182019186019080838360005b838110156101c05781810151838201526020016101a8565b50505050905090810190601f1680156101ed5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561020957600080fd5b506100776004803603602081101561022057600080fd5b50356001600160a01b0316610586565b61036d6004803603606081101561024657600080fd5b6001600160a01b03823516919081019060408101602082013564010000000081111561027157600080fd5b82018360208201111561028357600080fd5b803590602001918460018302840111640100000000831117156102a557600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092959493602081019350359150506401000000008111156102f857600080fd5b82018360208201111561030a57600080fd5b8035906020019184600183028401116401000000008311171561032c57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506105f8945050505050565b604080519115158252519081900360200190f35b6060600080836001600160a01b03166001600160a01b031681526020019081526020016000206001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561043e5780601f106104135761010080835404028352916020019161043e565b820191906000526020600020905b81548152906001019060200180831161042157829003601f168201915b50505050509050919050565b6000602081815291815260409081902080548251601f6002600019610100600186161502019093169290920491820185900485028101850190935280835290928391908301828280156104de5780601f106104b3576101008083540402835291602001916104de565b820191906000526020600020905b8154815290600101906020018083116104c157829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561057c5780601f106105515761010080835404028352916020019161057c565b820191906000526020600020905b81548152906001019060200180831161055f57829003601f168201915b5050505050905082565b6001600160a01b0381166000908152602081815260409182902080548351601f600260001961010060018616150201909316929092049182018490048402810184019094528084526060939283018282801561043e5780601f106104135761010080835404028352916020019161043e565b6001600160a01b0383166000908152602081815260408220845161062492600190920191860190610657565b506001600160a01b038416600090815260208181526040909120835161064c92850190610657565b506001949350505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061069857805160ff19168380011785556106c5565b828001600101855582156106c5579182015b828111156106c55782518255916020019190600101906106aa565b506106d19291506106d5565b5090565b6106ef91905b808211156106d157600081556001016106db565b9056fea265627a7a72315820b8b37c0bcd87fb39439d8b611f3150782bcef99b908fe0cf7232f9888c3a774864736f6c63430005100032",
+  "sourceMap": "190:670:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;190:670:2;;;;;;;",
+  "deployedSourceMap": "190:670:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;734:124;;8:9:-1;5:2;;;30:1;27;20:12;5:2;734:124:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;734:124:2;-1:-1:-1;;;;;734:124:2;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;734:124:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;308:39;;8:9:-1;5:2;;;30:1;27;20:12;5:2;308:39:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;308:39:2;-1:-1:-1;;;;;308:39:2;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;308:39:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;308:39:2;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;308:39:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;609:119;;8:9:-1;5:2;;;30:1;27;20:12;5:2;609:119:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;609:119:2;-1:-1:-1;;;;;609:119:2;;:::i;354:249::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;354:249:2;;;;;;;;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;354:249:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;354:249:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;354:249:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;354:249:2;;;;;;;;-1:-1:-1;354:249:2;;-1:-1:-1;;21:11;5:28;;2:2;;;46:1;43;36:12;2:2;354:249:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;354:249:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;354:249:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;354:249:2;;-1:-1:-1;354:249:2;;-1:-1:-1;;;;;354:249:2:i;:::-;;;;;;;;;;;;;;;;;;734:124;791:13;824:8;:17;833:7;-1:-1:-1;;;;;824:17:2;-1:-1:-1;;;;;824:17:2;;;;;;;;;;;;:26;;816:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;734:124;;;:::o;308:39::-;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;308:39:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;609:119::-;-1:-1:-1;;;;;698:17:2;;:8;:17;;;;;;;;;;;;690:31;;;;;;-1:-1:-1;;690:31:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;665:13;;690:31;;;698:17;690:31;;;;;;;;;;;;;;;;;;;;;;;;354:249;-1:-1:-1;;;;;502:17:2;;486:4;502:17;;;;;;;;;;:33;;;;:26;;;;;:33;;;;:::i;:::-;-1:-1:-1;;;;;;545:17:2;;:8;:17;;;;;;;;;;;:30;;;;;;;;:::i;:::-;-1:-1:-1;592:4:2;;354:249;-1:-1:-1;;;;354:249:2:o;190:670::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;190:670:2;;;-1:-1:-1;190:670:2;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity >=0.4.16 <0.9.0;\n\n/// @title User Registration\n/// @author Jisa\n/// @notice Use this contract for saving and retreiving registered users\n\ncontract UserSignup {\n    //sign up or login\n    struct reg {\n        string role;\n        string userHash;\n    }\n    mapping(address => reg) public register;\n\n    function savesignup(\n        address account,\n        string memory hash,\n        string memory urole\n    ) public payable returns (bool) {\n        register[account].userHash = hash;\n        register[account].role = urole;\n        return true;\n    }\n\n    function userRole(address account) public view returns (string memory) {\n        return (register[account].role);\n    }\n\n    function logindata(address account) public view returns (string memory) {\n        return (register[account].userHash);\n    }\n}\n",
+  "sourcePath": "/home/kottackal/Desktop/DAPP_react_Registration_GITHUB/src/contracts/UserSignup.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/UserSignup.sol",
+    "exportedSymbols": {
+      "UserSignup": [
+        127
+      ]
+    },
+    "id": 128,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 61,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".16",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title User Registration\n @author Jisa\n @notice Use this contract for saving and retreiving registered users",
+        "fullyImplemented": true,
+        "id": 127,
+        "linearizedBaseContracts": [
+          127
+        ],
+        "name": "UserSignup",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "UserSignup.reg",
+            "id": 66,
+            "members": [
+              {
+                "constant": false,
+                "id": 63,
+                "name": "role",
+                "nodeType": "VariableDeclaration",
+                "scope": 66,
+                "src": "260:11:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 62,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "260:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 65,
+                "name": "userHash",
+                "nodeType": "VariableDeclaration",
+                "scope": 66,
+                "src": "281:15:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 64,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "281:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "reg",
+            "nodeType": "StructDefinition",
+            "scope": 127,
+            "src": "239:64:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 70,
+            "name": "register",
+            "nodeType": "VariableDeclaration",
+            "scope": 127,
+            "src": "308:39:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_reg_$66_storage_$",
+              "typeString": "mapping(address => struct UserSignup.reg)"
+            },
+            "typeName": {
+              "id": 69,
+              "keyType": {
+                "id": 67,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "316:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "308:23:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_reg_$66_storage_$",
+                "typeString": "mapping(address => struct UserSignup.reg)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 68,
+                "name": "reg",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 66,
+                "src": "327:3:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_reg_$66_storage_ptr",
+                  "typeString": "struct UserSignup.reg"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 97,
+              "nodeType": "Block",
+              "src": "492:111:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 86,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 81,
+                          "name": "register",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 70,
+                          "src": "502:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_reg_$66_storage_$",
+                            "typeString": "mapping(address => struct UserSignup.reg storage ref)"
+                          }
+                        },
+                        "id": 83,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 82,
+                          "name": "account",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 72,
+                          "src": "511:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "502:17:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_reg_$66_storage",
+                          "typeString": "struct UserSignup.reg storage ref"
+                        }
+                      },
+                      "id": 84,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "userHash",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 65,
+                      "src": "502:26:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 85,
+                      "name": "hash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "531:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "502:33:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 87,
+                  "nodeType": "ExpressionStatement",
+                  "src": "502:33:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 93,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 88,
+                          "name": "register",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 70,
+                          "src": "545:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_reg_$66_storage_$",
+                            "typeString": "mapping(address => struct UserSignup.reg storage ref)"
+                          }
+                        },
+                        "id": 90,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 89,
+                          "name": "account",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 72,
+                          "src": "554:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "545:17:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_reg_$66_storage",
+                          "typeString": "struct UserSignup.reg storage ref"
+                        }
+                      },
+                      "id": 91,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "role",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 63,
+                      "src": "545:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 92,
+                      "name": "urole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 76,
+                      "src": "570:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "545:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 94,
+                  "nodeType": "ExpressionStatement",
+                  "src": "545:30:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 95,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "592:4:2",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 80,
+                  "id": 96,
+                  "nodeType": "Return",
+                  "src": "585:11:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 98,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "savesignup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 77,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "383:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 71,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "383:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 74,
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "408:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 73,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "408:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "urole",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "436:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "436:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "373:88:2"
+            },
+            "returnParameters": {
+              "id": 80,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 79,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "486:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 78,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "486:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "485:6:2"
+            },
+            "scope": 127,
+            "src": "354:249:2",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 111,
+              "nodeType": "Block",
+              "src": "680:48:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 105,
+                            "name": "register",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 70,
+                            "src": "698:8:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_reg_$66_storage_$",
+                              "typeString": "mapping(address => struct UserSignup.reg storage ref)"
+                            }
+                          },
+                          "id": 107,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 106,
+                            "name": "account",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 100,
+                            "src": "707:7:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "698:17:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_reg_$66_storage",
+                            "typeString": "struct UserSignup.reg storage ref"
+                          }
+                        },
+                        "id": 108,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "role",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 63,
+                        "src": "698:22:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      }
+                    ],
+                    "id": 109,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "697:24:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 104,
+                  "id": 110,
+                  "nodeType": "Return",
+                  "src": "690:31:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 112,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "userRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 101,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 100,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 112,
+                  "src": "627:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 99,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "627:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "626:17:2"
+            },
+            "returnParameters": {
+              "id": 104,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 103,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 112,
+                  "src": "665:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 102,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "665:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "664:15:2"
+            },
+            "scope": 127,
+            "src": "609:119:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 125,
+              "nodeType": "Block",
+              "src": "806:52:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 119,
+                            "name": "register",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 70,
+                            "src": "824:8:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_reg_$66_storage_$",
+                              "typeString": "mapping(address => struct UserSignup.reg storage ref)"
+                            }
+                          },
+                          "id": 121,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 120,
+                            "name": "account",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 114,
+                            "src": "833:7:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "824:17:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_reg_$66_storage",
+                            "typeString": "struct UserSignup.reg storage ref"
+                          }
+                        },
+                        "id": 122,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "userHash",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 65,
+                        "src": "824:26:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      }
+                    ],
+                    "id": 123,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "823:28:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 118,
+                  "id": 124,
+                  "nodeType": "Return",
+                  "src": "816:35:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 126,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "logindata",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 114,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "753:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 113,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "752:17:2"
+            },
+            "returnParameters": {
+              "id": 118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 117,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "791:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 116,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "791:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "790:15:2"
+            },
+            "scope": 127,
+            "src": "734:124:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 128,
+        "src": "190:670:2"
+      }
+    ],
+    "src": "36:825:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/src/contracts/UserSignup.sol",
+      "exportedSymbols": {
+        "UserSignup": [
+          127
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".16",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 61,
+        "name": "PragmaDirective",
+        "src": "36:32:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "@title User Registration\n @author Jisa\n @notice Use this contract for saving and retreiving registered users",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            127
+          ],
+          "name": "UserSignup",
+          "scope": 128
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "UserSignup.reg",
+              "name": "reg",
+              "scope": 127,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "role",
+                  "scope": 66,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 62,
+                    "name": "ElementaryTypeName",
+                    "src": "260:6:2"
+                  }
+                ],
+                "id": 63,
+                "name": "VariableDeclaration",
+                "src": "260:11:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "userHash",
+                  "scope": 66,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 64,
+                    "name": "ElementaryTypeName",
+                    "src": "281:6:2"
+                  }
+                ],
+                "id": 65,
+                "name": "VariableDeclaration",
+                "src": "281:15:2"
+              }
+            ],
+            "id": 66,
+            "name": "StructDefinition",
+            "src": "239:64:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "register",
+              "scope": 127,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => struct UserSignup.reg)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => struct UserSignup.reg)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 67,
+                    "name": "ElementaryTypeName",
+                    "src": "316:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "reg",
+                      "referencedDeclaration": 66,
+                      "type": "struct UserSignup.reg"
+                    },
+                    "id": 68,
+                    "name": "UserDefinedTypeName",
+                    "src": "327:3:2"
+                  }
+                ],
+                "id": 69,
+                "name": "Mapping",
+                "src": "308:23:2"
+              }
+            ],
+            "id": 70,
+            "name": "VariableDeclaration",
+            "src": "308:39:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "savesignup",
+              "scope": 127,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 98,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 71,
+                        "name": "ElementaryTypeName",
+                        "src": "383:7:2"
+                      }
+                    ],
+                    "id": 72,
+                    "name": "VariableDeclaration",
+                    "src": "383:15:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "hash",
+                      "scope": 98,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 73,
+                        "name": "ElementaryTypeName",
+                        "src": "408:6:2"
+                      }
+                    ],
+                    "id": 74,
+                    "name": "VariableDeclaration",
+                    "src": "408:18:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "urole",
+                      "scope": 98,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 75,
+                        "name": "ElementaryTypeName",
+                        "src": "436:6:2"
+                      }
+                    ],
+                    "id": 76,
+                    "name": "VariableDeclaration",
+                    "src": "436:19:2"
+                  }
+                ],
+                "id": 77,
+                "name": "ParameterList",
+                "src": "373:88:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 98,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 78,
+                        "name": "ElementaryTypeName",
+                        "src": "486:4:2"
+                      }
+                    ],
+                    "id": 79,
+                    "name": "VariableDeclaration",
+                    "src": "486:4:2"
+                  }
+                ],
+                "id": 80,
+                "name": "ParameterList",
+                "src": "485:6:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "userHash",
+                              "referencedDeclaration": 65,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct UserSignup.reg storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 70,
+                                      "type": "mapping(address => struct UserSignup.reg storage ref)",
+                                      "value": "register"
+                                    },
+                                    "id": 81,
+                                    "name": "Identifier",
+                                    "src": "502:8:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 72,
+                                      "type": "address",
+                                      "value": "account"
+                                    },
+                                    "id": 82,
+                                    "name": "Identifier",
+                                    "src": "511:7:2"
+                                  }
+                                ],
+                                "id": 83,
+                                "name": "IndexAccess",
+                                "src": "502:17:2"
+                              }
+                            ],
+                            "id": 84,
+                            "name": "MemberAccess",
+                            "src": "502:26:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 74,
+                              "type": "string memory",
+                              "value": "hash"
+                            },
+                            "id": 85,
+                            "name": "Identifier",
+                            "src": "531:4:2"
+                          }
+                        ],
+                        "id": 86,
+                        "name": "Assignment",
+                        "src": "502:33:2"
+                      }
+                    ],
+                    "id": 87,
+                    "name": "ExpressionStatement",
+                    "src": "502:33:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "role",
+                              "referencedDeclaration": 63,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct UserSignup.reg storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 70,
+                                      "type": "mapping(address => struct UserSignup.reg storage ref)",
+                                      "value": "register"
+                                    },
+                                    "id": 88,
+                                    "name": "Identifier",
+                                    "src": "545:8:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 72,
+                                      "type": "address",
+                                      "value": "account"
+                                    },
+                                    "id": 89,
+                                    "name": "Identifier",
+                                    "src": "554:7:2"
+                                  }
+                                ],
+                                "id": 90,
+                                "name": "IndexAccess",
+                                "src": "545:17:2"
+                              }
+                            ],
+                            "id": 91,
+                            "name": "MemberAccess",
+                            "src": "545:22:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 76,
+                              "type": "string memory",
+                              "value": "urole"
+                            },
+                            "id": 92,
+                            "name": "Identifier",
+                            "src": "570:5:2"
+                          }
+                        ],
+                        "id": 93,
+                        "name": "Assignment",
+                        "src": "545:30:2"
+                      }
+                    ],
+                    "id": 94,
+                    "name": "ExpressionStatement",
+                    "src": "545:30:2"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 80
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 95,
+                        "name": "Literal",
+                        "src": "592:4:2"
+                      }
+                    ],
+                    "id": 96,
+                    "name": "Return",
+                    "src": "585:11:2"
+                  }
+                ],
+                "id": 97,
+                "name": "Block",
+                "src": "492:111:2"
+              }
+            ],
+            "id": 98,
+            "name": "FunctionDefinition",
+            "src": "354:249:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "userRole",
+              "scope": 127,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 112,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 99,
+                        "name": "ElementaryTypeName",
+                        "src": "627:7:2"
+                      }
+                    ],
+                    "id": 100,
+                    "name": "VariableDeclaration",
+                    "src": "627:15:2"
+                  }
+                ],
+                "id": 101,
+                "name": "ParameterList",
+                "src": "626:17:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 112,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 102,
+                        "name": "ElementaryTypeName",
+                        "src": "665:6:2"
+                      }
+                    ],
+                    "id": 103,
+                    "name": "VariableDeclaration",
+                    "src": "665:13:2"
+                  }
+                ],
+                "id": 104,
+                "name": "ParameterList",
+                "src": "664:15:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 104
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "role",
+                              "referencedDeclaration": 63,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct UserSignup.reg storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 70,
+                                      "type": "mapping(address => struct UserSignup.reg storage ref)",
+                                      "value": "register"
+                                    },
+                                    "id": 105,
+                                    "name": "Identifier",
+                                    "src": "698:8:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 100,
+                                      "type": "address",
+                                      "value": "account"
+                                    },
+                                    "id": 106,
+                                    "name": "Identifier",
+                                    "src": "707:7:2"
+                                  }
+                                ],
+                                "id": 107,
+                                "name": "IndexAccess",
+                                "src": "698:17:2"
+                              }
+                            ],
+                            "id": 108,
+                            "name": "MemberAccess",
+                            "src": "698:22:2"
+                          }
+                        ],
+                        "id": 109,
+                        "name": "TupleExpression",
+                        "src": "697:24:2"
+                      }
+                    ],
+                    "id": 110,
+                    "name": "Return",
+                    "src": "690:31:2"
+                  }
+                ],
+                "id": 111,
+                "name": "Block",
+                "src": "680:48:2"
+              }
+            ],
+            "id": 112,
+            "name": "FunctionDefinition",
+            "src": "609:119:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "logindata",
+              "scope": 127,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 126,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 113,
+                        "name": "ElementaryTypeName",
+                        "src": "753:7:2"
+                      }
+                    ],
+                    "id": 114,
+                    "name": "VariableDeclaration",
+                    "src": "753:15:2"
+                  }
+                ],
+                "id": 115,
+                "name": "ParameterList",
+                "src": "752:17:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 126,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 116,
+                        "name": "ElementaryTypeName",
+                        "src": "791:6:2"
+                      }
+                    ],
+                    "id": 117,
+                    "name": "VariableDeclaration",
+                    "src": "791:13:2"
+                  }
+                ],
+                "id": 118,
+                "name": "ParameterList",
+                "src": "790:15:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 118
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "userHash",
+                              "referencedDeclaration": 65,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct UserSignup.reg storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 70,
+                                      "type": "mapping(address => struct UserSignup.reg storage ref)",
+                                      "value": "register"
+                                    },
+                                    "id": 119,
+                                    "name": "Identifier",
+                                    "src": "824:8:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 114,
+                                      "type": "address",
+                                      "value": "account"
+                                    },
+                                    "id": 120,
+                                    "name": "Identifier",
+                                    "src": "833:7:2"
+                                  }
+                                ],
+                                "id": 121,
+                                "name": "IndexAccess",
+                                "src": "824:17:2"
+                              }
+                            ],
+                            "id": 122,
+                            "name": "MemberAccess",
+                            "src": "824:26:2"
+                          }
+                        ],
+                        "id": 123,
+                        "name": "TupleExpression",
+                        "src": "823:28:2"
+                      }
+                    ],
+                    "id": 124,
+                    "name": "Return",
+                    "src": "816:35:2"
+                  }
+                ],
+                "id": 125,
+                "name": "Block",
+                "src": "806:52:2"
+              }
+            ],
+            "id": 126,
+            "name": "FunctionDefinition",
+            "src": "734:124:2"
+          }
+        ],
+        "id": 127,
+        "name": "ContractDefinition",
+        "src": "190:670:2"
+      }
+    ],
+    "id": 128,
+    "name": "SourceUnit",
+    "src": "36:825:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5": {
+      "events": {},
+      "links": {},
+      "address": "0x028B54122245bbf1E7e8e94507F3863A0D6f91c6",
+      "transactionHash": "0x086f32ac414de7f5f3f921e183f1cf6f2f0865803a7341d47161fc6381ad483b"
+    },
+    "1677755004023": {
+      "events": {},
+      "links": {},
+      "address": "0x64a035F219B054a024F8925Ac896F90b8Ec5B744",
+      "transactionHash": "0x8e2ad2edc0373819735e82d9fb15194eec8b00c8ef3228e80038b322f360d05d"
+    },
+    "1677820566152": {
+      "events": {},
+      "links": {},
+      "address": "0x5C8103cE9935a25155fEadd4b03393fb7e5a0117",
+      "transactionHash": "0x77e12c4b604d1bd2a9d58b76d2917c3458ea50da622e2cfaee1aa4c9fa0a4f1b"
+    },
+    "1677916145674": {
+      "events": {},
+      "links": {},
+      "address": "0x7d13dC6DFF034055a2D6bf652523A54639dCCb61",
+      "transactionHash": "0x7942bfdf7fa75f080ebf6036881064beb6a93f8d9f5c228f53fea8c829c9170e"
+    },
+    "1677974153914": {
+      "events": {},
+      "links": {},
+      "address": "0x48CA4183Cc3cb04Ef18Df72abeda04aBA77CaE7a",
+      "transactionHash": "0x1e267d6f00ccdde2242bf6f6366ba619c042e836e62c4db4b9bc62ca11a8d8f6"
+    },
+    "1677979693349": {
+      "events": {},
+      "links": {},
+      "address": "0xB0be09B0c797c7490DF2Ccd6480f367F49785091",
+      "transactionHash": "0x6ea2b5e0b4709385c31cbab25d180caa0f0b5c8370fa5cc4088300fb25bd538a"
+    },
+    "1677980296183": {
+      "events": {},
+      "links": {},
+      "address": "0x8707c4a25C1a32803E5dc2F0013838cCf8a00493",
+      "transactionHash": "0x682117235d080a923baea9bd9f7a3d0d2d9ec409ca8be645425e8731232cb989"
+    },
+    "1677981502551": {
+      "events": {},
+      "links": {},
+      "address": "0xD79b0D2bA8B9b038374db0d62F57903bd9Abe06c",
+      "transactionHash": "0xed500b4df669fb513fd4334c8b8aa4fafc90afd0718272eac6954f1f1bb646a0"
+    }
+  },
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2023-03-05T03:16:39.417Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "author": "Jisa",
+    "methods": {},
+    "title": "User Registration"
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Use this contract for saving and retreiving registered users"
+  }
+}
